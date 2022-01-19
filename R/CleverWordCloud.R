@@ -11,4 +11,5 @@
 #' @examples
 #' CleverWordCloud(sample_text, max_words=200)
 CleverWordCloud <- function(text, stopwords=STOPWORDS, shape=CLOUD, max_words=100) {
+
 }

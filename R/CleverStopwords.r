@@ -8,3 +8,4 @@
 #' @examples
 #' words <- c("would", "aaa")
 #' CleverStopwords(words)
+

@@ -1,3 +1,4 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("Non-dataframe input value for CleverWordCloud should throw an error", {
+  expect_error(CleverWordCloud(2))
+  expect_error(CleverWordCloud(list(4)))
 })

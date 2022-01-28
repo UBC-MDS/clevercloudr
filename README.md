@@ -25,7 +25,7 @@ Packages that have similar functions:
 
 -   [wordcloud](https://www.rdocumentation.org/packages/wordcloud/versions/2.6/topics/wordcloud): a word count generator that emphasis more frequently used words from an array of strings and represents them in the form of an image.
 
-What we do different:
+What we do differently:
 
 -   Our aim is to improve on the pre-processing of strings before creating a wordcloud in order to make it more user specific and efficient.
 
@@ -60,4 +60,4 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## **License**
 
-`clevercloudr` was created by Group_20. It is licensed under the terms of the MIT license.
+`clevercloudr` was created by Amelia Tang, Arushi Ahuja, Victor Francis, Adrianne Leung. It is licensed under the terms of the MIT license.

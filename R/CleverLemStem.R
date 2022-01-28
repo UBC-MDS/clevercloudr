@@ -1,12 +1,26 @@
-#' This function conducts lemmatinzation and stemming on a string.
+#' This function conducts lemmatinzation and stemming on a list of strings/characters
 #'
-#' @param text Input a string
+#' @param text Input a list of strings/characters
 #'
-#' @return a lemmatized and stemmed string
+#' @return a lemmatized and stemmed string vector
 #' @export
 #'
 #' @examples
-#' CleverLemStem("crying feet maximum")
+#' CleverLemStem(list("crying", "feet", "maximum"))
+
+library(textstem)
+
 CleverLemStem <- function(text) {
 
+  if(!is.list(text)){
+   stop("The input is not a list!")
+   }
+
+  for (i in text){
+    if(typeof(i) == "character"){stop("Each element of the input list should be a string/character(s)")}
+  }
+  text <- as.vector(text)
+  lem_text <- lemmatize_words(text)
+  stem_lem_text <- stem_strings(lem_text)
+  return(stem_lem_text)
 }

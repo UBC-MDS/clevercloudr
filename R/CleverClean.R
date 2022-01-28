@@ -17,6 +17,11 @@ CleverClean <- function(text) {
   library(stringr)
   library(tm)
   
+  #Checking if text is a list
+  if(!is.list(text)){
+    stop("Input paramter should be a list")
+  }
+  
   #Checking if list contain only string elements
   for (i in text) {
     if (!is.character(i)) {

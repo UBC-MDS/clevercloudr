@@ -1,8 +1,12 @@
-#' Return a comprehensive list of English stopwords that allow adding more customized words
+#' This function returns a comprehensive list of English stopwords that 
+#' allows adding more customized words.
 #'
+#' @name CleverStopwords
+#' 
 #' @param words A list of strings that needs to be included in the stopwords.
 #'
 #' @return stopwords_all A list of strings that includes the complete set of stopwords.
+#' 
 #' @export
 #'
 #' @examples

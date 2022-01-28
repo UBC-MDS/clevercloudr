@@ -1,11 +1,36 @@
-#' Return a comprehensive character vector of English stopwords that allow adding more customized words
+#' Return a comprehensive list of English stopwords that allow adding more customized words
 #'
-#' @param words A character vector of strings that needs to be included in the stopwords.
+#' @param words A list of strings that needs to be included in the stopwords.
 #'
-#' @return stopwords_all A character vector of strings that includes the complete set of stopwords.
+#' @return stopwords_all A list of strings that includes the complete set of stopwords.
 #' @export
 #'
 #' @examples
-#' words <- c("would", "aaa")
+#' words <- list("would", "aaa")
 #' CleverStopwords(words)
+
+
+library(stopwords)
+
+CleverStopwords <- function(words) {
+  if(!is.list(words)) { 
+    stop("The input is not a list.")
+  }
+
+  for (w in words){
+    if(typeof(w) != "character") {
+      stop("Each element of the input list should be a character(s)")
+      }
+  }
+  stopwords <- as.list(stopwords(language = "en"))
+  new_stopwords <- words
+  
+  for (w in new_stopwords) {
+    if (!(w %in% stopwords)) {
+      stopwords_all <- union(stopwords, new_stopwords)
+    } else {stopwords_all <- stopwords}
+    
+  return(stopwords_all[order(as.character(stopwords_all))])
+  }
+}
 

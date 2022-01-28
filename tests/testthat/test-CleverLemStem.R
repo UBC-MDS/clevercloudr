@@ -1,4 +1,4 @@
-test_that("CleverLemStem() does stemming for an input list", {
+test_that("CleverLemStem() does lemmatizing for an input list", {
   expect_equal(CleverLemStem(list("running", "ran", "runs")), c("run", "run", "run"))
   })
 
@@ -6,7 +6,7 @@ test_that("CleverLemStem() does stemming for an input list", {
 test_that("CleverLemStem() does stemming for an input list", {
   expect_equal(CleverLemStem(list("feet", "lovers", "accounting")), c("foot", "lover", "account"))
   })
-  
+
 test_that("CleverLemStem() errors if input is not a list", {
   expect_error(CleverLemStem(c("crying", "running")))
   })

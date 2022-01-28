@@ -13,6 +13,8 @@ CleverWordCloud <- function(dataframe=demoFreq) {
   library(RColorBrewer)
   library(tm)
   library(htmlwidgets)
+  library(testthat)
+  library(usethis)
   # wordcloud(words = text, max.words=max_w, min.freq = 50,
   #       random.order=FALSE, rot.per=0.35,
   #       colors=brewer.pal(8, "Dark2"))

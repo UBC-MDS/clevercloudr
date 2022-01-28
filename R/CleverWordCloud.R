@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-#' CleverWordCloud(demoFreq)
+#' CleverWordCloud(c("cry", "foot", "maximum"))
 CleverWordCloud <- function(cleverlemstem_output) {
   library(wordcloud)
   library(wordcloud2)

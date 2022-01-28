@@ -17,7 +17,7 @@ CleverLemStem <- function(text) {
    }
 
   for (i in text){
-    if(typeof(i) == "character"){stop("Each element of the input list should be a string/character(s)")}
+    if(typeof(i) != "character"){stop("Each element of the input list should be a string/character(s)")}
   }
   text <- as.vector(text)
   lem_text <- lemmatize_words(text)

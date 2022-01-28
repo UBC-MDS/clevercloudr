@@ -7,7 +7,7 @@
 #'
 #' @examples
 #' CleverWordCloud(demoFreq)
-CleverWordCloud <- function(dataframe=demoFreq) {
+CleverWordCloud <- function(cleverlemstem_output) {
   library(wordcloud)
   library(wordcloud2)
   library(RColorBrewer)
@@ -15,25 +15,25 @@ CleverWordCloud <- function(dataframe=demoFreq) {
   library(htmlwidgets)
   library(testthat)
   library(usethis)
-  # wordcloud(words = text, max.words=max_w, min.freq = 50,
-  #       random.order=FALSE, rot.per=0.35,
-  #       colors=brewer.pal(8, "Dark2"))
+  library(tidyverse)
 
-  if(!is.data.frame(dataframe)){
-    stop("Cannot return wordcloud for non-dataframe object")
+  if(is.data.frame(cleverlemstem_output)){
+    stop("Cannot return wordcloud for dataframe object, only vector of characters are allowed as input")
   }
-  if(is.numeric(dataframe)){
-    stop("Cannot return wordcloud for numeric object, dataframe objects only")
+  if(is.numeric(cleverlemstem_output)){
+    stop("Cannot return wordcloud for numeric object, only vector of characters are allowed as input")
   }
-  if(is.character(dataframe)){
-    stop("Cannot return wordcloud for string object, dataframe objects only")
+  if(!is.character(cleverlemstem_output)){
+    stop("Cannot return wordcloud for non-character input")
   }
-  if(is.integer(dataframe)){
-    stop("Cannot return wordcloud for integer object, dataframe objects only")
+  if(is.integer(cleverlemstem_output)){
+    stop("Cannot return wordcloud for integer object, only vector of characters are allowed as input")
   }
-  if(ncol(dataframe)!=2){
-    stop("Input dataframe should have 2 columns: words, and count of words respectively")
-  }
+
+
+  dataframe <- data.frame(word=cleverlemstem_output) |>
+    group_by(word) |>
+    summarise(freq=n())
 
   wc <- wordcloud2(data = dataframe, color = "random-light", backgroundColor = "grey")
   saveWidget(wc,"wordcloud.html",selfcontained = F)

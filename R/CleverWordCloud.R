@@ -1,14 +1,20 @@
 #' This function generates a visually appealing word cloud with customized shape and stopwords.
 #'
-#' @param text Input an array of text / strings.
-#' @param CleverStop Input an set of strings.
-#' @param max_w Input an integer to indicate the maximum number of words included in the word cloud
+#' @param data DataFrame containing the words and their frequencies
 #'
 #' @return An image
 #' @export
 #'
 #' @examples
-#' CleverWordCloud(text, {"are", "my", "is"}, 200)
-CleverWordCloud <- function(text, CleverStop, max_w) {
-
+#' CleverWordCloud(demoFreq)
+CleverWordCloud <- function(dataframe=demoFreq) {
+  library(wordcloud)
+  library(wordcloud2)
+  library(RColorBrewer)
+  library(tm)
+  library(htmlwidgets)
+  wc <- wordcloud2(data = dataframe, color = "random-light", backgroundColor = "grey")
+  saveWidget(wc,"wordcloud.html",selfcontained = F)
+  webshot::webshot("wordcloud.html","wordcloud.png",vwidth = 1992, vheight = 1744)
+  wc
 }

@@ -26,5 +26,14 @@ RoxygenNote: 7.1.2
 Config/testthat/edition: 3
 Imports: 
     corpus,
-    stopwords
-
+    htmlwidgets,
+    RColorBrewer,
+    stopwords,
+    testthat,
+    tm,
+    usethis,
+    vecsets,
+    wordcloud,
+    wordcloud2
+Depends: 
+    tidyverse

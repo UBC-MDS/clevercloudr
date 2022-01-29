@@ -2,25 +2,23 @@
 % Please edit documentation in R/CleverWordCloud.R
 \name{CleverWordCloud}
 \alias{CleverWordCloud}
-\title{This function generates a visually appealing word cloud with customized shape and stopwords.}
+\title{This function generates a meaningful word cloud with customized stopwords}
 \usage{
-CleverWordCloud(text, stopwords = STOPWORDS, shape = CLOUD, max_words = 100)
+CleverWordCloud(text, my_stopwords)
 }
 \arguments{
-\item{text}{Input an array of text / strings.}
+\item{text}{Input a character vector}
 
-\item{stopwords}{Input an set of strings.}
-
-\item{shape}{Input a string that represents the path to an image.}
-
-\item{max_words}{Input an integer to indicate the maximum number of words included in the word cloud}
+\item{my_stopwords}{a list of strings}
 }
 \value{
 An image
 }
 \description{
-This function generates a visually appealing word cloud with customized shape and stopwords.
+This function generates a meaningful word cloud with customized stopwords
 }
 \examples{
-CleverWordCloud(sample_text, max_words=200)
+\dontrun{
+CleverWordCloud(c("cry", "foot", "maximum", "is"), list("is"))
+}
 }

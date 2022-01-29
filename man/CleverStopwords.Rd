@@ -4,6 +4,9 @@
 \alias{CleverStopwords}
 \title{This function returns a comprehensive list of English stopwords that
 allows adding more customized words.}
+\usage{
+CleverStopwords(words)
+}
 \arguments{
 \item{words}{A list of strings that needs to be included in the stopwords.}
 }

@@ -1,12 +1,19 @@
 #' This function generates a meaningful word cloud with customized stopwords
 #'
+#' @name CleverWordCloud
+#'
 #' @param text Input a character vector
 #' @param my_stopwords a list of strings
+#'
 #' @return An image
+#'
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' CleverWordCloud(c("cry", "foot", "maximum", "is"), list("is"))
+#' }
+
 CleverWordCloud <- function(text, my_stopwords) {
   library(wordcloud)
   library(wordcloud2)

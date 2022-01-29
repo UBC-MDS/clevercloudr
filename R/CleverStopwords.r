@@ -30,11 +30,11 @@ CleverStopwords <- function(words) {
   new_stopwords <- words
   
   for (w in new_stopwords) {
-    if (!(w %in% stopwords)) {
-      stopwords_all <- union(stopwords, new_stopwords)
-    } else {stopwords_all <- stopwords}
-    
-  return(stopwords_all[order(as.character(stopwords_all))])
-  }
+    if (!(w %in% unlist(stopwords))) {
+      stopwords <- append(stopwords, w)
+    } 
+    else {stopwords}
+  }  
+    return(stopwords[order(as.character(stopwords))])
 }
 

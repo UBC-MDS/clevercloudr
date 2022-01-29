@@ -7,11 +7,11 @@
 CleverWordCloud(text, stopwords = STOPWORDS, shape = CLOUD, max_words = 100)
 }
 \arguments{
-\item{text}{Input an array of text / strings}
+\item{text}{Input an array of text / strings.}
 
-\item{stopwords}{Input an set of strings}
+\item{stopwords}{Input an set of strings.}
 
-\item{shape}{Input a string that represents the path to an image}
+\item{shape}{Input a string that represents the path to an image.}
 
 \item{max_words}{Input an integer to indicate the maximum number of words included in the word cloud}
 }

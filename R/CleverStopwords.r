@@ -20,14 +20,19 @@ CleverStopwords <- function(words) {
   if(!is.list(words)) { 
     stop("The input is not a list.")
   }
-
+  
   for (w in words){
     if(typeof(w) != "character") {
       stop("Each element of the input list should be a character(s)")
-      }
+    }
   }
+    
   stopwords <- as.list(stopwords(language = "en"))
   new_stopwords <- words
+  
+  if(length(stopwords) == 0) { 
+    stop("The default stopwords is not imported from package.")
+  }
   
   for (w in new_stopwords) {
     if (!(w %in% unlist(stopwords))) {
@@ -35,6 +40,6 @@ CleverStopwords <- function(words) {
     } 
     else {stopwords}
   }  
-    return(stopwords[order(as.character(stopwords))])
+  return(stopwords[order(as.character(stopwords))])
 }
 

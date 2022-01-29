@@ -1,6 +1,6 @@
 #' This function generates a meaningful word cloud with customized stopwords
 #'
-#' @param data DataFrame containing the words and their frequencies
+#' @param text Input a character vector
 #'
 #' @return An image
 #' @export

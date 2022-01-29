@@ -1,7 +1,7 @@
 #' This function generates a meaningful word cloud with customized stopwords
 #'
 #' @param text Input a character vector
-#' @param stopwords a list of strings
+#' @param my_stopwords a list of strings
 #' @return An image
 #' @export
 #'

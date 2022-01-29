@@ -38,5 +38,4 @@ Imports:
     webshot,
     wordcloud,
     wordcloud2
-Depends: 
-    tidyverse
+

@@ -34,8 +34,9 @@ CleverWordCloud <- function(text, my_stopwords) {
 
   stopwords_vector <- unlist(my_stopwords)
   input_text <- vecsets::vsetdiff(text, stopwords_vector)
-
-  dataframe <- data.frame(word=input_text) |>
+  word <- NULL
+  
+  dataframe <- data.frame(word = input_text ) |>
     dplyr::group_by(word) |>
     dplyr::summarise(freq=dplyr::n())
 

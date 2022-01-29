@@ -2,19 +2,17 @@
 % Please edit documentation in R/CleverStemmer.R
 \name{CleverStemmer}
 \alias{CleverStemmer}
-\title{This function performs stemming on a string and converts it into a character vector}
-\usage{
-CleverStemmer(text)
-}
+\title{This function performs stemming on a string or a character vector and converts it into a character vector}
 \arguments{
-\item{text}{Input a string}
+\item{text}{Input a string or a character vector}
 }
 \value{
 a character vector that has been stemmed
 }
 \description{
-This function performs stemming on a string and converts it into a character vector
+This function performs stemming on a string or a character vector and converts it into a character vector
 }
 \examples{
 CleverStemmer("running buying feeding")
+CleverStemmer(c("running", "buying", "feeding"))
 }

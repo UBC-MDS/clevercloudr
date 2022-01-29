@@ -12,11 +12,7 @@
 #' CleverClean(text)
 
 CleverClean <- function(text) {
-  
-  library(tidyverse)
-  library(stringr)
-  library(tm)
-  
+   
   #Checking if text is a list
   if(!is.list(text)){
     stop("Input paramter should be a list")
@@ -36,10 +32,10 @@ CleverClean <- function(text) {
   prepro_text <- tolower(text)
   
   #Removing all digits
-  prepro_text <- removeNumbers(prepro_text)
+  prepro_text <- tm::removeNumbers(prepro_text)
   
   #Removing all punctuation 
-  prepro_text <- removePunctuation(prepro_text)
+  prepro_text <- tm::removePunctuation(prepro_text)
   
   #Return the pre-processed vector
   return (prepro_text)

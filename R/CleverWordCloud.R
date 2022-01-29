@@ -15,16 +15,6 @@
 #' }
 
 CleverWordCloud <- function(text, my_stopwords) {
-  library(wordcloud)
-  library(wordcloud2)
-  library(RColorBrewer)
-  library(tm)
-  library(htmlwidgets)
-  library(testthat)
-  library(usethis)
-  library(tidyverse)
-  library(vecsets)
-
   if(is.data.frame(text)){
     stop("Cannot return wordcloud for dataframe object, only vector of characters are allowed as input")
   }
@@ -46,11 +36,11 @@ CleverWordCloud <- function(text, my_stopwords) {
   input_text <- vecsets::vsetdiff(text, stopwords_vector)
 
   dataframe <- data.frame(word=input_text) |>
-    group_by(word) |>
-    summarise(freq=n())
+    dplyr::group_by(word) |>
+    dplyr::summarise(freq=dplyr::n())
 
-  wc <- wordcloud2(data = dataframe, color = "random-light", backgroundColor = "grey")
-  saveWidget(wc,"wordcloud.html",selfcontained = F)
+  wc <- wordcloud2::wordcloud2(data = dataframe, color = "random-light", backgroundColor = "grey")
+  htmlwidgets::saveWidget(wc,"wordcloud.html",selfcontained = F)
   webshot::webshot("wordcloud.html","wordcloud.png",vwidth = 1992, vheight = 1744)
   return(wc)
 }

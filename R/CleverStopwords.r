@@ -17,10 +17,12 @@
 library(stopwords)
 
 CleverStopwords <- function(words) {
+  # Check if input is a list
   if(!is.list(words)) { 
     stop("The input is not a list.")
   }
   
+  # Check if list contains only string elements
   for (w in words){
     if(typeof(w) != "character") {
       stop("Each element of the input list should be a character(s)")
@@ -30,6 +32,7 @@ CleverStopwords <- function(words) {
   stopwords <- as.list(stopwords(language = "en"))
   new_stopwords <- words
   
+  # Check if stopwords is imported from package
   if(length(stopwords) == 0) { 
     stop("The default stopwords is not imported from package.")
   }

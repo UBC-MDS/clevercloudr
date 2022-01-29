@@ -1,4 +1,4 @@
-#' This function generates a visually appealing word cloud with customized shape and stopwords.
+#' This function generates a meaningful word cloud with customized stopwords
 #'
 #' @param data DataFrame containing the words and their frequencies
 #'

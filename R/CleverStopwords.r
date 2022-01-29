@@ -13,9 +13,6 @@
 #' words <- list("would", "aaa")
 #' CleverStopwords(words)
 
-
-library(stopwords)
-
 CleverStopwords <- function(words) {
   # Check if input is a list
   if(!is.list(words)) { 
@@ -29,7 +26,7 @@ CleverStopwords <- function(words) {
     }
   }
     
-  stopwords <- as.list(stopwords(language = "en"))
+  stopwords <- as.list(stopwords::stopwords(language = "en"))
   new_stopwords <- words
   
   # Check if stopwords is imported from package

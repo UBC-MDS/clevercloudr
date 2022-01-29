@@ -1,6 +1,5 @@
 test_that("CleverStopwords() does addition of unique strings only.", {
-  library(stopwords)
-  stopwords_len <- length(as.list(stopwords(language = "en")))
+  stopwords_len <- length(as.list(stopwords::stopwords(language = "en")))
   word_unique <- length(list("123", "aaa"))
   word_dup <- stopwords_len + 1
   unique_total <- word_unique + stopwords_len

@@ -11,9 +11,9 @@ The goal of clevercloudr is to to serve as the one-step solution to create meani
 
 There are 4 functions in this package:
 
--   `CleverClean` A preprocessor to convert all the letters to lower case and remove punctuations.
+-   `CleverClean` A preprocessor to convert all the letters to lower case and remove punctuation.
 
--   `CleverLemStem` A preprocessor to conduct lemmatization and stemming on the text.
+-   `CleverStemmer` A preprocessor to stemming on the text.
 
 -   `CleverStopwords` A comprehensive list of English stopwords that allow adding more customized words.
 
@@ -23,7 +23,7 @@ There are 4 functions in this package:
 
 Packages that have similar functions:
 
--   [wordcloud](https://www.rdocumentation.org/packages/wordcloud/versions/2.6/topics/wordcloud): a word count generator that emphasis more frequently used words from an array of strings and represents them in the form of an image.
+-   [wordcloud2](https://cran.r-project.org/web/packages/wordcloud2/vignettes/wordcloud.html): a word cloud generator for data visualization. 
 
 What we do differently:
 
@@ -31,7 +31,7 @@ What we do differently:
 
 -   The package wordcloud does not allow customization of stopwords, but with our package gives users the opportunity to add stopwords that cater to their analysis.
 
--   We follow the standard practices of cleaning data to make the text suitable for creating meaningful word cloud, focusing on removing as many redundant and duplicate words by setting all letters to lower case, removing punctuation and digits as well as applying lemmetizer and stemmer to further process the text.  
+-   We follow the standard practices of cleaning data to make the text suitable for creating meaningful word cloud, focusing on removing as duplicate words by setting all letters to lower case, removing punctuation and digits as well as applying stemmer to further process the text.  
 
 ## Installation
 

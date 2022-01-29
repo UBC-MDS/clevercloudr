@@ -1,5 +1,5 @@
 #' This function conducts lemmatinzation and stemming on a list of strings/characters
-#'
+#' @name CleverLemStem
 #' @param text Input a list of strings/characters
 #'
 #' @return a lemmatized and stemmed string vector
@@ -8,9 +8,9 @@
 #' @examples
 #' CleverLemStem(list("crying", "feet", "maximum"))
 
-library(textstem)
 
 CleverLemStem <- function(text) {
+  library(textstem)
 
   if(!is.list(text)){
    stop("The input is not a list!")

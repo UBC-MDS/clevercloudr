@@ -1,4 +1,4 @@
-#' This function performs stemming on a string or a character vector and converts it into a character vector
+#' This function performs stemming on a string or a character vector and returns a character vector
 #' @name CleverStemmer
 #'
 #' @param text Input a string or a character vector
@@ -14,7 +14,7 @@ library(corpus)
 
 CleverStemmer<- function(text) {
 
-  # Check is the input is a string or a character vector
+  # Check if the input is a string or a character vector
   if(!is.character(text)){
     stop("The input is not a string or character vector!")
   }

@@ -2,7 +2,6 @@
 #'
 #' @param text Input a character vector
 #' @param stopwords a list of strings
-#'
 #' @return An image
 #' @export
 #'

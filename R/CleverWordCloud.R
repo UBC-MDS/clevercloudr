@@ -7,7 +7,7 @@
 #'
 #' @examples
 #' CleverWordCloud(c("cry", "foot", "maximum"))
-CleverWordCloud <- function(cleverlemstem_output) {
+CleverWordCloud <- function(text) {
   library(wordcloud)
   library(wordcloud2)
   library(RColorBrewer)
@@ -17,21 +17,21 @@ CleverWordCloud <- function(cleverlemstem_output) {
   library(usethis)
   library(tidyverse)
 
-  if(is.data.frame(cleverlemstem_output)){
+  if(is.data.frame(text)){
     stop("Cannot return wordcloud for dataframe object, only vector of characters are allowed as input")
   }
-  if(is.numeric(cleverlemstem_output)){
+  if(is.numeric(text)){
     stop("Cannot return wordcloud for numeric object, only vector of characters are allowed as input")
   }
-  if(!is.character(cleverlemstem_output)){
+  if(!is.character(text)){
     stop("Cannot return wordcloud for non-character input")
   }
-  if(is.integer(cleverlemstem_output)){
+  if(is.integer(text)){
     stop("Cannot return wordcloud for integer object, only vector of characters are allowed as input")
   }
 
 
-  dataframe <- data.frame(word=cleverlemstem_output) |>
+  dataframe <- data.frame(word=text) |>
     group_by(word) |>
     summarise(freq=n())
 

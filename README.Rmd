@@ -16,7 +16,8 @@ knitr::opts_chunk$set(
 # clevercloudr
 
 <!-- badges: start -->
-
+[![codecov](https://codecov.io/gh/UBC-MDS/clevercloudr/branch/main/graph/badge.svg?token=HFLZjh5639)](https://codecov.io/gh/UBC-MDS/clevercloudr)
+[![R-CMD-check](https://github.com/UBC-MDS/clevercloudr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/clevercloudr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of clevercloudr is to to serve as a solution to create meaningful word clouds. To create meaningful word clouds, data scientists typically takes multiple steps to clean the data, such as removing stopwords, removing punctuation and digits, making the letters lower cases, conducting stemming. This package will help data scientists clean the data easily following the common practices and also allow to create more meaningful word clouds. 

@@ -1,0 +1,71 @@
+---
+title: "Introduction to clevercloudr"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to clevercloudr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Overview
+
+The goal of `clevercloudr` is to to serve as a solution to create meaningful word clouds. This library will help data scientists and data analysts clean the data easily by providing functions to clean raw text data, conduct stemming and customize stopwords.  
+
+
+## Installation 
+```{r install, warning=FALSE, message=FALSE}
+devtools::install_github("UBC-MDS/clevercloudr")
+```
+
+
+## Load the library
+
+```{r setup}
+library(clevercloudr)
+```
+
+```{r, include=FALSE, warning=FALSE}
+library("magrittr")
+```
+
+## Data 
+The first function `CleverClean()` takes in a list of strings as an input. 
+
+```{r data, message=FALSE}
+text <- list("grounds!!!", "feet6", "running123", "feeding", "feed", "feed$", "grounding", "feet", "happiness")
+text
+```
+## Clean text data with `CleverClean()`
+`CleverClean()` takes in a list of strings as an input. It removes digits and puncations in the strings and returns a character vector. 
+```{r cleverclean}
+clean_text <- CleverClean(text)
+clean_text
+```
+## Perform stemming with `CleverStemmer()`
+`CleverStemmer()` takes in a character vector or a string as an input. It performs stemming on each element of the character vector or each word in the string.    
+```{r stemmer}
+stem_text <- CleverStemmer(clean_text)
+stem_text
+```
+
+## Add customized English stopwords with `CleverStopwords()`
+`CleverStopwords()` takes a list of strings as an input. It will add each string in the input list to a list of most common English stopwords. 
+```{R stopwords}
+new_words <- list("happi")
+new_stopwords <- CleverStopwords(new_words)
+new_stopwords
+```
+
+## Generate the word cloud with preproccessed text and customized stopwords using `CleverWordCloud()`
+`CleverWordCloud()` takes in two arguments, a character vector of words and a list of stopwords. It generates a png object and an html file in the current directory where the function is called. The word cloud is meaningful and reflects accurate frequencies without the influences of different tenses and/or various forms of the same word.   
+
+```{R cloud}
+CleverWordCloud(stem_text, new_stopwords)
+```

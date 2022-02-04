@@ -43,3 +43,4 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://ubc-mds.github.io/clevercloudr, https://github.com/UBC-MDS/clevercloudr

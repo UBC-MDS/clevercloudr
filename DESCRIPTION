@@ -37,6 +37,9 @@ Imports:
     vecsets,
     webshot,
     wordcloud,
-    wordcloud2
+    wordcloud2,
+    magrittr
 Suggests: 
-    covr
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

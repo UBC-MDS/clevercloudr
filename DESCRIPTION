@@ -38,4 +38,5 @@ Imports:
     webshot,
     wordcloud,
     wordcloud2
-
+Suggests: 
+    covr

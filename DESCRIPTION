@@ -37,6 +37,10 @@ Imports:
     vecsets,
     webshot,
     wordcloud,
-    wordcloud2
+    wordcloud2,
+    magrittr
 Suggests: 
-    covr
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+URL: https://ubc-mds.github.io/clevercloudr, https://github.com/UBC-MDS/clevercloudr

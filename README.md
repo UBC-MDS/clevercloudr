@@ -24,7 +24,7 @@ There are 4 functions in this package:
 -   `CleverClean` A preprocessor to convert all the letters to lower
     case and remove punctuations.
 
--   `CleverStemmer` A preprocessor to stemming on the text
+-   `CleverStemmer` A preprocessor to perform stemming on the text
 
 -   `CleverStopwords` A comprehensive list of English stopwords that
     allow adding more customized words.
@@ -65,14 +65,42 @@ You can install the development version of clevercloudr from
 devtools::install_github("UBC-MDS/clevercloudr")
 ```
 
-## Example
+## Examples
 
-This is a basic example which shows you how to solve a common problem:
+Some quick examples of `CleverClean()`, `CleverStemmer()`,
+`CleverStopwords()` and `CleverWordCloud()`.
 
 ``` r
 library(clevercloudr)
-## basic example code
+text <- list("grounds!!!", "feet6", "running123", "feeding", "feed", "feed$", "grounding", "feet", "happiness")
+
+# Clean raw text data 
+clean_text <- CleverClean(text)
+clean_text
+#> [1] "grounds"   "feet"      "running"   "feeding"   "feed"      "feed"     
+#> [7] "grounding" "feet"      "happiness"
 ```
+
+``` r
+# Perform stemming on the text 
+stem_text <- CleverStemmer(clean_text)
+stem_text
+#> [1] "ground" "feet"   "run"    "feed"   "feed"   "feed"   "ground" "feet"  
+#> [9] "happi"
+```
+
+``` r
+# Customize the stopwords by adding stopwords specific to each project / task 
+new_words <- list("happi")
+new_stopwords <- CleverStopwords(new_words)
+```
+
+``` r
+# Generate the word cloud
+CleverWordCloud(stem_text, new_stopwords)
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ## **Contributing**
 

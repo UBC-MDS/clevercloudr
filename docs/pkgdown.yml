@@ -1,0 +1,7 @@
+pandoc: '2.17'
+pkgdown: 2.0.2
+pkgdown_sha: ~
+articles:
+  intro-clevercloudr: intro-clevercloudr.html
+last_built: 2022-02-04T08:39Z
+

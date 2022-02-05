@@ -5,7 +5,7 @@
 #' @param text Input a character vector
 #' @param my_stopwords a list of strings
 #'
-#' @return An image
+#' @return an image (a PNG object and an html object)
 #'
 #' @export
 #'
